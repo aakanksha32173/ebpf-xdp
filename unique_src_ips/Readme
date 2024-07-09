@@ -1,0 +1,4 @@
+                                                                IP Packets Tracker
+                                                              ----------------------
+This project contains a Python script load.py that loads the C program ippackets.c. The C program tracks unique IP addresses and updates a counter each time a
+corresponding IP address reoccurs. Once running in kernel space, the program will print all IPs coming on the interface until a keyboard interrupt(Ctrl C)occurs.
