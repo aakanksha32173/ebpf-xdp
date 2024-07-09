@@ -20,9 +20,9 @@ int pingIP(struct xdp_md *ctx){
 
 	struct iphdr *ip=data + sizeof(struct ethhdr);
 	if(data + sizeof(struct ethhdr)+ sizeof(struct iphdr)<=data_end){
-	bpf_printk("proto%u",ip->protocol);
-	bpf_printk("ping packet from ip %pI4",&ip->saddr);
-	bpf_printk("ping packet to ip %pI4", &ip->daddr);
+	bpf_printk("protocol%u",ip->protocol);
+	bpf_printk("packet from ip %pI4",&ip->saddr);
+	bpf_printk("packet to ip %pI4", &ip->daddr);
 
 }}
 
