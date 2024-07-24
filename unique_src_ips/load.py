@@ -9,7 +9,7 @@ file = csv.writer(file)
 device = "enp11s0f1" 
 b = BPF(src_file="ippackets.c") 
 fn = b.load_func("ip_source_counter", BPF.XDP) 
-b.attach_xdp(device, fn, 0) 
+b.attach_(device, fn, 0) 
 
 try:
     b.trace_print() 

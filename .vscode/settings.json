@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "LOAD2.C": "cpp",
+        "bpf.h": "c",
+        "bpf_endian.h": "c"
+    }
+}
