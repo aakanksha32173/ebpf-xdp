@@ -114,7 +114,7 @@ try:
             val=key.value
             data = ctypes.cast(ctypes.addressof(leaf), ctypes.POINTER(Data)).contents
             id=data.id
-            flag=data.flags
+            flag=f"0x{data.flags:04X}"
             qdcount=data.qdcount
             ancount=data.ancount
             nscount=data.nscount
