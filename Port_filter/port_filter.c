@@ -2,6 +2,7 @@
 #include <linux/if_ether.h>
 #include <linux/ip.h>
 #include <linux/tcp.h>
+#include <bpf/bpf_endian.h>
 
 SEC("xdp")
 int port_80_filter(struct xdp_md *ctx) {
@@ -31,7 +32,7 @@ int port_80_filter(struct xdp_md *ctx) {
     struct tcphdr *tcp = data + sizeof(struct ethhdr) + sizeof(struct iphdr);
 
     // Check if the destination port is 80
-    if (htons(tcp->dest) == 80) {
+    if (bpf_ntohs(tcp->dest) == 80) {
         // Packet matches port 80
         // Drop the packet
         return XDP_DROP;
