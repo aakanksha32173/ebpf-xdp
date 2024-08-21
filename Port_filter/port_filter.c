@@ -18,7 +18,7 @@ int port_80_filter(struct xdp_md *ctx) {
     struct ethhdr *eth = data;
 
     // Check if the packet is IP
-    if (eth->h_proto != htons(ETH_P_IP))
+    if (eth->h_proto != bpf_htons(ETH_P_IP))
         return XDP_PASS;
 
     // Load IP header
